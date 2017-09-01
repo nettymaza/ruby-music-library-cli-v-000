@@ -6,6 +6,10 @@ class MusicImporter
   end
 
   def files
-
+    Dir.entries(@path).select do |filename|
+      filename.include? ".mp3"
+    end
   end
+
+  
 end
