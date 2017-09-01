@@ -53,7 +53,7 @@ class Song
     # end
   end
 
-  def self.new_by_filename(filename)
+  def self.new_from_filename(filename)
     song = self.new(filename)
     
     # song = self.new(filename.split(" - ")[1])
