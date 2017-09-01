@@ -86,8 +86,6 @@ class MusicLibraryController
     if input > 0 && input < songs_sorted.length
       song = songs_sorted[input - 1]
       puts "Playing #{song.name} by #{song.artist.name}"
-    else
-      play_song
     end
   end
 end
