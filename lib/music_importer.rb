@@ -11,7 +11,8 @@ class MusicImporter
     end
   end
 
-  
+  def import
+  end
 
 
 end
