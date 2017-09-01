@@ -57,6 +57,9 @@ def list_genres
   end
 end
 
+def list_songs_by_artists
+end 
+
 
 
 end
