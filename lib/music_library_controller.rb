@@ -1,4 +1,5 @@
 require 'byebug'
+
 class MusicLibraryController
 
   def initialize(path = "./db/mp3s")
@@ -85,7 +86,7 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     list_songs
     input = gets.strip
-    binding.pry
+    byebug
     song = songs_sorted[input]
     puts "Now playing #{song.name} by #{song.artist.name}"
   end
