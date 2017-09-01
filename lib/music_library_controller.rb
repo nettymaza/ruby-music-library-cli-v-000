@@ -37,25 +37,25 @@ class MusicLibraryController
     end
   end
 
-  def sorted_items(className)
-    className.all.sort{ |a, b| a.name <=> b.name }
+  def songs_sorted
+    Song.all.sort{ |a, b| a.name <=> b.name }
   end
 
   def list_songs
-    sorted_items(Song).each.with_index(1) do |song, index|
+    songs_sorted.each.with_index(1) do |song, index|
       puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
       # binding.pry
     end
   end
 
   def list_artists
-    sorted_items(Artist).each.with_index(1) do |artist, index|
+    Artist.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |artist, index|
       puts "#{index}. #{artist.name}"
     end
   end
 
   def list_genres
-    sorted_items(Genre).each.with_index(1) do |genre, index|
+    Genre.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |genre, index|
       puts "#{index}. #{genre.name}"
     end
   end
@@ -83,8 +83,8 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     input = gets.strip.to_i
-    if input > 0 && input < sorted_items(Song).length
-      song = sorted_items(Song)[input - 1]
+    if input > 0 && input < songs_sorted.length
+      song = songs_sorted[input - 1]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
