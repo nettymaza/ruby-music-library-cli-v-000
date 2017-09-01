@@ -70,6 +70,8 @@ class Song
   #   end
   # end
 
+  def self.create_from_filename
+
 
 
 
